@@ -23,9 +23,9 @@ def get_mask_card_number(card_string: str) -> str:
     if start == -1 or not (13 <= length <= 19):
         return card_string
 
-    digits = card_string[start: start + length]
+    digits = card_string[start : start + length]
     masked = f"{digits[:4]} {digits[4:6]}** **** {digits[-4:]}"
-    return card_string[:start] + masked + card_string[start + length:]
+    return card_string[:start] + masked + card_string[start + length :]
 
 
 def get_mask_account(account_string: str) -> str:
@@ -51,8 +51,8 @@ def get_mask_account(account_string: str) -> str:
         i += 1
 
     if start != -1 and length == 20:
-        digits = account_string[start: start + 20]
+        digits = account_string[start : start + 20]
         masked = f"**{digits[-4:]}"
-        return account_string[:start] + masked + account_string[start + 20:]
+        return account_string[:start] + masked + account_string[start + 20 :]
 
     return account_string
