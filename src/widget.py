@@ -51,15 +51,10 @@ def get_date(input_str: str) -> str:
     # Поиск шаблона YYYY-MM-DD
     for i in range(max(0, n - 9)):
         if (
-            i + 10 <= n
-            and s[i + 4] == "-"
-            and s[i + 7] == "-"
-            and s[i : i + 4].isdigit()
-            and s[i + 5 : i + 7].isdigit()
-            and s[i + 8 : i + 10].isdigit()
+            i + 10 <= n and s[i + 4] == "-" and s[i + 7] == "-" and s[i: i + 4].isdigit() and s[i + 5: i + 7].isdigit() and s[i + 8: i + 10].isdigit()
         ):
             try:
-                date_str = s[i : i + 10]
+                date_str = s[i: i + 10]
                 dt = datetime.strptime(date_str, "%Y-%m-%d")
             except ValueError:
                 continue
@@ -81,10 +76,10 @@ def get_date(input_str: str) -> str:
         for p in ["%Y/%m/%d", "%d.%m.%Y"]:
             if start + 10 > n:
                 break
-            candidate = s[start : start + 10]
+            candidate = s[start: start + 10]
             try:
                 dt = datetime.strptime(candidate, p)
-                return s[:start] + dt.strftime("%d.%m.%Y") + s[start + 10 :]
+                return s[:start] + dt.strftime("%d.%m.%Y") + s[start + 10:]
             except ValueError:
                 continue
 
