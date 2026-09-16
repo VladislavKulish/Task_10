@@ -33,7 +33,7 @@ card_number_generator(start, end) — генерация номеров карт
 Примеры использования
 Фильтрация транзакций по валюте
 python
-from src.widget import filter_by_currency
+from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
 transactions = [
     {
