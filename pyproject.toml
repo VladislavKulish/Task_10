@@ -6,7 +6,7 @@ authors = [
     {name = "Vladislav Kulish", email = "valourknight@yandex.ru"}
 ]
 requires-python = "^3.14"
-dependencies = []
+dependencies = ["pandas (>=3.0.6,<4.0.0)"]
 
 [tool.poetry]
 package-mode = false

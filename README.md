@@ -155,3 +155,20 @@ bash
 poetry run pytest
 Лицензия
 Проект распространяется под лицензией MIT.
+
+
+## Новая функциональность: поддержка CSV и Excel
+
+Проект теперь поддерживает чтение финансовых транзакций не только из JSON,
+но и из CSV- и XLSX-файлов.
+
+### Использование
+
+```python
+from src.services import read_csv_transactions, read_excel_transactions
+
+# Чтение из CSV
+transactions = read_csv_transactions("data/transactions.csv")
+
+# Чтение из Excel
+transactions = read_excel_transactions("data/transactions_excel.xlsx")
